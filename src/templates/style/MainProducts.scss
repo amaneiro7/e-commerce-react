@@ -1,0 +1,16 @@
+.main {
+    background-color: var(--clr-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;    
+    &__title {
+        color: var(--clr-main);
+        margin-bottom: 2rem;
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+}

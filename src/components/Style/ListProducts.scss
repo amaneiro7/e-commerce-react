@@ -1,0 +1,36 @@
+.main {
+    &__container {
+        &__list {
+            &--image {
+                max-width: 100%;
+                border-radius: 1rem;
+            }            
+            &--details {
+                background-color: var(--clr-main);
+                color: var(--clr-white);
+                padding: .5rem;
+                border-radius: 1rem;
+                margin-top: -2rem;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }            
+            &--add {
+                border: none;
+                background-color: var(--clr-white);
+                color: var(--clr-main);
+                text-transform: uppercase;
+                padding: .4rem;
+                border-radius: 1.5rem;
+                cursor: pointer;
+                border: 2px solid var(--clr-white);    
+                transition: color 0.5s;
+                &:hover {
+                    background-color: var(--clr-main);
+                    color: var(--clr-white);
+                }
+            }            
+        }
+    }
+}
