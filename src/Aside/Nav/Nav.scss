@@ -1,7 +1,8 @@
-.nav__menu {
+.nav__menu {    
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    list-style: none;
 }
 
 .bi-hand-index-thumb-fill::before,
@@ -17,10 +18,11 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-weight: 600;
+    font-weight: 600;    
     padding: 1rem;
-    font-size: .85rem;
+    font-size: 1rem;
     position: relative;
+    text-transform: capitalize;
 }
 
 .btn--menu.active {
@@ -31,7 +33,7 @@
 }
 
 .btn--menu.active::before {
-    content: "";
+    content: "";    
     position: absolute;
     width: 1rem;
     height: 2rem;

@@ -24,3 +24,11 @@ h1, h2, h3, h4, h5, h6, p, a, input, textarea {
     grid-template-columns: 1fr 4fr;
     background-color: var(--clr-main);
 }
+
+ul {
+    list-style: none; 
+ }
+ 
+ a{
+     text-decoration: none;
+ }

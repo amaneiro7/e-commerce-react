@@ -1,18 +1,26 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-const apiUrl = 'https://fakestoreapi.com/products'
 
-const useGetProducts = (apiUrl) => {
-    const [products, setProducts] = useState([]);
-
+export function useGetProducts(endPoint) {
+    const API = 'https://fakestoreapi.com';
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [products, setProducts] = useState([]);    
+    
     useEffect(() => {
-        (async () => {
-            const response = await axios(apiUrl);
-            setProducts(response.data);
-        })();
-    }, []);
+        const apiUrl = `${API}${endPoint}`;
+        fetch(apiUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                setProducts(data)
+                setLoading(false)
+            })
+            .catch((error) =>
+                setError(error))
+    }, [endPoint]);
 
-    return products;
+    return {
+        products,
+        loading,
+        error,
+    };
 };
-
-export default useGetProducts;
