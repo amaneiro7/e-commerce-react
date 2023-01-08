@@ -10,14 +10,17 @@ export function MainProducts() {
     title,
     loading,
     error,
-  } = useContext(TodoContext)
+  } = useContext(TodoContext);
+
+  //La cantidad de cards que apareceran en el tiempo de carga
+  const loadCard = 3;
   
   
   return (
     <main className="main">
       <h2 className="main__title">{title}</h2>
       <div className="main__container">
-        {loading && Array.from({length:9},(_, i) => 
+        {loading && Array.from({length:loadCard},(_, i) => 
         <Loading key={i}/>)}
         {(!loading && !error) &&
           products.map((product) => (

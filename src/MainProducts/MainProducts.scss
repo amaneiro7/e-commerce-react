@@ -3,7 +3,7 @@
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
-    padding: 3rem;    
+    padding: 3rem;  
     &__title {
         color: var(--clr-main);
         margin-bottom: 2rem;
@@ -11,9 +11,9 @@
     }
     &__container {
         display: grid;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-columns: repeat(auto-fit, 250px);
         grid-template-rows: 400px;       
-        gap: 3rem;        
+        justify-content: space-between;
+        gap: 2rem;
     }
 }

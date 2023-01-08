@@ -7,6 +7,7 @@ export function useGetProducts(endPoint) {
     const [products, setProducts] = useState([]);    
     
     useEffect(() => {
+        setLoading(true)
         const apiUrl = `${API}${endPoint}`;
         fetch(apiUrl)
             .then((response) => response.json())
