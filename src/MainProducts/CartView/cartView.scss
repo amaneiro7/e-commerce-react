@@ -1,0 +1,42 @@
+.main__container__cart {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main__container__cart--actions {
+    display: flex;
+    justify-content: space-between;
+}
+.main__container__cart--btn-empty {
+    border: none;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.main__container__cart--right-actions {
+    display: flex;
+}
+
+.main__container__cart--total-actions {
+    display: flex;    
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.main__container__cart--btn-buy-actions {
+    border: none;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 0 1rem 1rem 0;
+    cursor: pointer;
+}
