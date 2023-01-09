@@ -48,14 +48,11 @@
         }
         
         .main__container__cart--delete {
+            font-size: 1.3rem;
             border: none;
             background-color: transparent;
-            color: var(--clr-red);   
-            cursor: pointer;
-            .bi-trash-fil::before {
-                width: 30px;
-                height: 30px;
-            }
+            color: var(--clr-cancel-btn);   
+            cursor: pointer;            
         }
     }
 }

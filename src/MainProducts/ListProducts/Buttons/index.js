@@ -4,7 +4,7 @@ import "./Buttons.scss"
 
 export function AddButton(props) {
     const { product } = props
-    const { addToCart } = useContext(TodoContext);
+    const { addToCart } = useContext(TodoContext);    
     
     return (
         <button className="main__container__list--add" type="button"

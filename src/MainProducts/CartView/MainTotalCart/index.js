@@ -7,7 +7,7 @@ export function MainTotalCart() {
     const sumTotal = () => {                             
         const reducer = (accumalator, currentValue) => accumalator + (currentValue.price * currentValue.quantity);
         const sum = (cartProduct.reduce(reducer, 0)).toFixed(2);
-        return sum;
+        return sum
     };
 
     return (

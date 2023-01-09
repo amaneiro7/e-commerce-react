@@ -18,7 +18,7 @@ export function TodoProvider(props) {
         removeFromCart,
         removeAllFromCart,
         sumQuantityProduct,
-        resQuantityProduct
+        resQuantityProduct,        
     } = useAddToCart();
 
     const onChangeCategory = (event) => {
@@ -58,7 +58,7 @@ export function TodoProvider(props) {
             resQuantityProduct,
             setCartView,
             onChangeCategory,
-            onHandleCartView,
+            onHandleCartView,            
         }}>
             {props.children}
         </TodoContext.Provider>

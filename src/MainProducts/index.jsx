@@ -33,7 +33,7 @@ export function MainProducts() {
               />
             ))}
         </div>}
-      {(!loading && !error && cartView) && <CartView />}
+      {(cartView) && <CartView />}
     </main>
   );
 }

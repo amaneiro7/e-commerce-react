@@ -6,14 +6,14 @@ export function useGetProducts(endPoint) {
     const [error, setError] = useState(false);
     const [products, setProducts] = useState([]);    
     
-    useEffect(() => {
+    useEffect(() => {        
         setLoading(true)
         const apiUrl = `${API}${endPoint}`;
         fetch(apiUrl)
             .then((response) => response.json())
             .then((data) => {
-                setProducts(data)
                 setLoading(false)
+                setProducts(data)
             })
             .catch((error) =>
                 setError(error))

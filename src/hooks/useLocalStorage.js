@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export function useLocalStorage(itenName, initialValue) {
+export function useLocalStorage(itenName, initialValue) {    
     const [item, setItem] = useState(initialValue);
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false)      
+    const [getSync, setGetSync] = useState(true)
 
-    useEffect(() => {
-        setTimeout(() => {
+    useEffect(() => {                
             try {
                 const localStorageItem = localStorage.getItem(itenName);
                 let parsedItem;
@@ -16,24 +16,26 @@ export function useLocalStorage(itenName, initialValue) {
                 } else {
                     parsedItem = JSON.parse(localStorageItem);
                 }
-                setItem(parsedItem);                
+                setItem(parsedItem);
+                setGetSync(true);
+            } catch (error) {
+                setError(error);
+            }        
+        }, [getSync]);
+        
+        const saveItem = (newItem) => {
+            setGetSync(false);        
+            try {
+                localStorage.setItem(itenName, JSON.stringify(newItem));
+                setItem(item);            
             } catch (error) {
                 setError(error);
             }
-        }, 80);
-    }, [itenName, initialValue, item]);
-
-    const saveItem = (newItem) => {
-        try {
-            localStorage.setItem(itenName, JSON.stringify(newItem));
-            setItem(item);
-        } catch (error) {
-            setError(error);
-        }
     };
+
     return {
         saveItem,
         item,
-        error
+        error,        
     };
 }

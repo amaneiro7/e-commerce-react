@@ -3,7 +3,7 @@ import { useLocalStorage } from "./useLocalStorage";
 export const useAddToCart = () => {    
     const {
         item: cartProduct,
-        saveItem: saveCartProduct
+        saveItem: saveCartProduct        
     } = useLocalStorage('CurrentCart', [])
 
     const addToCart = (payload) => {
@@ -48,4 +48,3 @@ export const useAddToCart = () => {
     };
 };
 
-//estoy recibiendo unos datos de una API quiero crear un nuevo array llave valor y añadirle un nuevo valor?

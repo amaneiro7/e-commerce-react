@@ -5,7 +5,8 @@ import "./ListProducts.scss";
 
 export function ListProducts({ product }) {
   const { cartProduct } = useContext(TodoContext);
-  const toggleButon = (cartProduct.some((item) => item.id === product.id))  
+  const toggleButon = (cartProduct.some((item) => item.id === product.id)); 
+  
 
   return (
     <>

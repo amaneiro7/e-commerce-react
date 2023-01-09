@@ -2,7 +2,6 @@ import React from "react";
 import { TodoProvider } from "../hooks";
 import { AppUI } from "./AppUI";
 
-
 function App() {
   return (
     <TodoProvider>      

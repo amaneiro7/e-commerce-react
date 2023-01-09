@@ -1,7 +1,6 @@
 import React from "react";
 import { Aside } from "../Aside"
 import { MainProducts } from "../MainProducts";
-
 import "./AppUI.css"
 
 
