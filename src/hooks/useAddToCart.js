@@ -1,29 +1,51 @@
-import {useState} from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
-const initialState = {
-    cart: [],
-}
-
-export const useAddToCart = () => {
-    const [cartProduct, setCartProduct] = useState(initialState);
+export const useAddToCart = () => {    
+    const {
+        item: cartProduct,
+        saveItem: saveCartProduct
+    } = useLocalStorage('CurrentCart', [])
 
     const addToCart = (payload) => {
-        setCartProduct({
-            ...cartProduct,
-            cart: [...cartProduct.cart, payload],
-        });
+        payload.quantity = 1;
+        payload.selected = true;
+        const newAddToCart = [...cartProduct];
+        newAddToCart.push(payload);
+        saveCartProduct(newAddToCart);
     };
     
     const removeFromCart = (payload) => {
-        setCartProduct({
-            ...cartProduct,
-            cart: cartProduct.cart.filter((items) => items.id !== payload.id)
-        });
+        const removeProduct = cartProduct.filter((items) => items.id !== payload.id);
+        saveCartProduct(removeProduct);
     };
+
+    const removeAllFromCart = () => {        
+        saveCartProduct([]);
+    };
+
+    const sumQuantityProduct = (payload) => {
+        const index = cartProduct.findIndex((items) => items.id === payload.id);
+        const productQuantity = [...cartProduct];
+        productQuantity[index].quantity++        
+        saveCartProduct(productQuantity);
+    };
+    
+    const resQuantityProduct = (payload) => {
+        const index = cartProduct.findIndex((items) => items.id === payload.id);
+        const productQuantity = [...cartProduct];
+        productQuantity[index].quantity--        
+        saveCartProduct(productQuantity);
+    };
+
 
     return {
         cartProduct,
         addToCart,
         removeFromCart,
+        removeAllFromCart,
+        sumQuantityProduct,
+        resQuantityProduct,
     };
 };
+
+//estoy recibiendo unos datos de una API quiero crear un nuevo array llave valor y añadirle un nuevo valor?

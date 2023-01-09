@@ -20,7 +20,7 @@ export function MainProducts() {
 
   return (
     <main className="main">
-      <h2 className="main__title">{title}</h2>
+      <h2 className="main__title">{!(cartView) ? title : `Todos los productos`}</h2>
       {!cartView &&
         <div className="main__container">
           {loading && Array.from({ length: loadCard }, (_, i) =>

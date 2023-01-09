@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { TodoContext } from "../../../hooks";
 import "./MainCartProducts.scss"
 
 export function MainCartProducts({product}) {
-    const {removeFromCart} = useContext(TodoContext);
-    const [quantity, setQuantity] = useState(1)
+    const {removeFromCart, sumQuantityProduct, resQuantityProduct} = useContext(TodoContext);    
     return (
         <>
             <div className="main__container__cart--products">
@@ -18,14 +17,14 @@ export function MainCartProducts({product}) {
                         <small>Cantidad</small>
                         <div>
                             <button
-                                onClick={() => setQuantity(quantity -1)}
-                                disabled={quantity === 1}
+                                onClick={() => resQuantityProduct(product)}
+                                disabled={product.quantity === 1}
                             >
                                 -
                             </button>
-                            <h3>{quantity}</h3>
+                            <h3>{product.quantity}</h3>
                             <button
-                                onClick={() => setQuantity(quantity +1)}
+                                onClick={() => sumQuantityProduct(product)}
                             >
                                 +
                             </button>
@@ -37,10 +36,10 @@ export function MainCartProducts({product}) {
                     </div>
                     <div className="main__container__cart--subtotal">
                         <small>Subtotal</small>
-                        <h3>${(quantity*product.price).toFixed(2)}</h3>
+                        <h3>${(product.quantity*product.price).toFixed(2)}</h3>
                     </div>
                     <button className="main__container__cart--delete" type="button"
-                        onClick={() => removeFromCart(product)}    
+                        onClick={() => removeFromCart(product)}
                     >
                         <i className="bi bi-trash-fill" />
                     </button>

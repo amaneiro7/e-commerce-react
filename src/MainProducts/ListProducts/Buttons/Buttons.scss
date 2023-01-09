@@ -1,0 +1,24 @@
+.main__container__list--add {
+    height: 32px;
+    border: none;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    text-transform: uppercase;
+    padding: .4rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);    
+    transition: color 0.5s;
+    &:hover {
+        background-color: var(--clr-main);
+        color: var(--clr-white);
+    }
+}
+.main__container__list--add.remove {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+    &:hover {
+        background-color: var(--clr-white);
+        color: var(--clr-red);
+    }
+}            

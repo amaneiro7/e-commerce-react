@@ -8,19 +8,19 @@ import "./cartView.scss";
 
 export function CartView() {
     const {cartProduct} = useContext(TodoContext);
-    const {cart} = cartProduct;
+    
     
     return (
         <div className="main__container__cart">
-            {cart.length === 0 && <EmptyCart/>}
-            {cart.length !== 0 && 
-                cart.map((product) => (
+            {cartProduct.length === 0 && <EmptyCart/>}
+            {cartProduct.length !== 0 && 
+                cartProduct.map((product) => (
                     <MainCartProducts
                         key={product.id}
                         product={product}
                     />))}
             <MainTotalCart/>
-            {cart.length !== 0 && <BoughtMessage/>}
+            {cartProduct.length !== 0 && <BoughtMessage/>}
         </div>
     );
 };

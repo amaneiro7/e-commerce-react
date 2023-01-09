@@ -7,7 +7,7 @@ export function Nav() {
   const {
     categories,
     categorySelected,     
-    onChangeCategory,
+    onChangeCategory,    
     cartView,
     setCartView,
     cartProduct
@@ -36,7 +36,7 @@ export function Nav() {
           onClick={() => setCartView(true)}
           >
             <i className="bi bi-cart-fill" />
-            Carrito <span className="numerito">{cartProduct.cart.length}</span>
+            Carrito <span className="numerito">{cartProduct.length}</span>
           </button>
         </li>
       </ul>

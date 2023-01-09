@@ -11,10 +11,15 @@ export function TodoProvider(props) {
     const {products, loading, error} = useGetProducts(endPoint);   
     const {categories, loadingCat}  = useGetCategories();
     const [categorySelected, setCategorySelected] = useState('Todos los productos');
-    const [cartView, setCartView] = useState(false);
-    const {cartProduct, addToCart, removeFromCart} = useAddToCart();
-
-
+    const [cartView, setCartView] = useState(false);    
+    const {
+        cartProduct,
+        addToCart,
+        removeFromCart,
+        removeAllFromCart,
+        sumQuantityProduct,
+        resQuantityProduct
+    } = useAddToCart();
 
     const onChangeCategory = (event) => {
         setCartView(false)
@@ -30,8 +35,10 @@ export function TodoProvider(props) {
     };
 
     const onHandleCartView = () => {
-        setCartView(true)
+        setTitle('Todos los productos');
+        setCartView(true);
     }
+
 
     return (
         <TodoContext.Provider value={{
@@ -46,6 +53,9 @@ export function TodoProvider(props) {
             cartProduct,
             addToCart,
             removeFromCart,
+            removeAllFromCart,
+            sumQuantityProduct,
+            resQuantityProduct,
             setCartView,
             onChangeCategory,
             onHandleCartView,
