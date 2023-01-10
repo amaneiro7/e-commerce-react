@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/carpi-shop-react/static/css/main.059f24d4.css",
+    "main.js": "/carpi-shop-react/static/js/main.ab776038.js",
+    "index.html": "/carpi-shop-react/index.html",
+    "main.059f24d4.css.map": "/carpi-shop-react/static/css/main.059f24d4.css.map",
+    "main.ab776038.js.map": "/carpi-shop-react/static/js/main.ab776038.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.059f24d4.css",
+    "static/js/main.ab776038.js"
+  ]
+}
